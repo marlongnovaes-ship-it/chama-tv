@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chama TV - IPTV Premium | Teste Grátis 2 Horas</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navegação -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <img src="logo-chama-tv.png" alt="Chama TV" class="logo-img">
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#inicio" class="nav-link">Início</a></li>
+                <li><a href="#sobre" class="nav-link">Sobre</a></li>
+                <li><a href="#planos" class="nav-link">Planos</a></li>
+                <li><a href="#recursos" class="nav-link">Recursos</a></li>
+                <li><a href="#faq" class="nav-link">FAQ</a></li>
+                <li><a href="#contato" class="nav-link">Contato</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="hero-flames-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <div class="flame-logo">
+                <div class="flame-animation">🔥</div>
+            </div>
+            <h1 class="hero-title">Bem-vindo ao <span class="gradient-text">Chama TV</span></h1>
+            <p class="hero-subtitle">O melhor serviço de IPTV Premium do Brasil</p>
+            <p class="hero-description">Milhares de canais em HD/4K, filmes, séries, esportes ao vivo e muito mais!</p>
+            
+            <div class="hero-badge">
+                <span class="badge-icon">⚡</span>
+                <span class="badge-text">TESTE GRÁTIS 2 HORAS</span>
+            </div>
+            
+            <div class="hero-buttons">
+                <button class="btn btn-primary btn-glow" onclick="criarTeste()">
+                    <span class="btn-icon">🔥</span>
+                    Criar Teste Automático
+                </button>
+                <button class="btn btn-secondary" onclick="scrollToSection('planos')">
+                    Ver Planos
+                </button>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>↓</span>
+        </div>
+    </section>
+
+    <!-- Sobre -->
+    <section id="sobre" class="section sobre">
+        <div class="container">
+            <h2 class="section-title">O Que é <span class="gradient-text">Chama TV</span>?</h2>
+            <div class="sobre-grid">
+                <div class="sobre-card">
+                    <div class="card-icon">📺</div>
+                    <h3>IPTV Premium</h3>
+                    <p>Acesso a milhares de canais de TV ao vivo, incluindo canais abertos, fechados, esportes, filmes e séries sob demanda.</p>
+                </div>
+                <div class="sobre-card">
+                    <div class="card-icon">⚡</div>
+                    <h3>Alta Velocidade</h3>
+                    <p>Streaming em alta definição (HD/Full HD/4K) com servidores de alta performance para garantir estabilidade.</p>
+                </div>
+                <div class="sobre-card">
+                    <div class="card-icon">🌐</div>
+                    <h3>Multi-Dispositivos</h3>
+                    <p>Compatível com Smart TV, Android, iOS, PC, notebook, TV Box e muito mais. Assista onde quiser!</p>
+                </div>
+                <div class="sobre-card">
+                    <div class="card-icon">🔒</div>
+                    <h3>Seguro e Confiável</h3>
+                    <p>Servidores seguros e criptografados. Suporte técnico disponível para ajudar você a qualquer momento.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Planos -->
+    <section id="planos" class="section planos">
+        <div class="container">
+            <h2 class="section-title">Escolha Seu <span class="gradient-text">Plano</span></h2>
+            <p class="section-subtitle">Planos flexíveis para todos os perfis</p>
+            
+            <div class="planos-grid">
+                <div class="plano-card">
+                    <div class="plano-header">
+                        <h3>Mensal</h3>
+                        <div class="plano-icon">📱</div>
+                    </div>
+                    <div class="plano-price">
+                        <span class="currency">R$</span>
+                        <span class="value">29</span>
+                        <span class="period">/mês</span>
+                    </div>
+                    <ul class="plano-features">
+                        <li>✓ Todos os canais disponíveis</li>
+                        <li>✓ Qualidade HD/Full HD</li>
+                        <li>✓ 1 tela simultânea</li>
+                        <li>✓ Suporte técnico</li>
+                        <li>✓ Sem fidelidade</li>
+                    </ul>
+                    <button class="btn btn-outline" onclick="contatar('Mensal')">Assinar Agora</button>
+                </div>
+
+                <div class="plano-card plano-destaque">
+                    <div class="plano-badge">MAIS POPULAR</div>
+                    <div class="plano-header">
+                        <h3>Trimestral</h3>
+                        <div class="plano-icon">🔥</div>
+                    </div>
+                    <div class="plano-price">
+                        <span class="currency">R$</span>
+                        <span class="value">69</span>
+                        <span class="period">/3 meses</span>
+                    </div>
+                    <ul class="plano-features">
+                        <li>✓ Todos os canais disponíveis</li>
+                        <li>✓ Qualidade HD/Full HD/4K</li>
+                        <li>✓ 2 telas simultâneas</li>
+                        <li>✓ Suporte prioritário</li>
+                        <li>✓ Economia de 20%</li>
+                    </ul>
+                    <button class="btn btn-primary btn-glow" onclick="contatar('Trimestral')">Assinar Agora</button>
+                </div>
+
+                <div class="plano-card">
+                    <div class="plano-header">
+                        <h3>Anual</h3>
+                        <div class="plano-icon">👑</div>
+                    </div>
+                    <div class="plano-price">
+                        <span class="currency">R$</span>
+                        <span class="value">199</span>
+                        <span class="period">/ano</span>
+                    </div>
+                    <ul class="plano-features">
+                        <li>✓ Todos os canais disponíveis</li>
+                        <li>✓ Qualidade HD/Full HD/4K</li>
+                        <li>✓ 3 telas simultâneas</li>
+                        <li>✓ Suporte VIP 24/7</li>
+                        <li>✓ Economia de 43%</li>
+                    </ul>
+                    <button class="btn btn-outline" onclick="contatar('Anual')">Assinar Agora</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recursos -->
+    <section id="recursos" class="section recursos">
+        <div class="container">
+            <h2 class="section-title">Por Que Escolher a <span class="gradient-text">Chama TV</span>?</h2>
+            
+            <div class="recursos-grid">
+                <div class="recurso-item">
+                    <div class="recurso-icon">📺</div>
+                    <h3>+10.000 Canais</h3>
+                    <p>Acesso ilimitado a milhares de canais nacionais e internacionais</p>
+                </div>
+                <div class="recurso-item">
+                    <div class="recurso-icon">🎬</div>
+                    <h3>Filmes e Séries</h3>
+                    <p>Biblioteca completa com lançamentos e clássicos sob demanda</p>
+                </div>
+                <div class="recurso-item">
+                    <div class="recurso-icon">⚽</div>
+                    <h3>Esportes ao Vivo</h3>
+                    <p>Todos os campeonatos, lutas, corridas e eventos esportivos</p>
+                </div>
+                <div class="recurso-item">
+                    <div class="recurso-icon">🎮</div>
+                    <h3>Interface Intuitiva</h3>
+                    <p>Navegação fácil e rápida em todos os dispositivos</p>
+                </div>
+                <div class="recurso-item">
+                    <div class="recurso-icon">🚀</div>
+                    <h3>Sem Travamentos</h3>
+                    <p>Servidores de alta performance para streaming estável</p>
+                </div>
+                <div class="recurso-item">
+                    <div class="recurso-icon">💬</div>
+                    <h3>Suporte 24/7</h3>
+                    <p>Equipe sempre disponível para ajudar você</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section faq">
+        <div class="container">
+            <h2 class="section-title">Perguntas <span class="gradient-text">Frequentes</span></h2>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h3>O que é IPTV?</h3>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>IPTV (Internet Protocol Television) é uma tecnologia que permite assistir TV através da internet. Diferente da TV tradicional por cabo ou satélite, o IPTV transmite conteúdo através de sua conexão de internet, oferecendo mais flexibilidade, qualidade e variedade de canais.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h3>Como funciona o teste grátis de 2 horas?</h3>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Ao clicar no botão "Criar Teste Automático", você receberá acesso imediato ao nosso serviço por 2 horas. Poderá testar todos os canais, qualidade de streaming e recursos antes de decidir assinar. Não é necessário cartão de crédito para o teste!</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h3>Quais dispositivos são compatíveis?</h3>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>A Chama TV é compatível com praticamente todos os dispositivos: Smart TVs (Samsung, LG, Sony), Android (celulares e tablets), iOS (iPhone e iPad), computadores (Windows, Mac, Linux), TV Box, Amazon Fire Stick, Chromecast e muito mais!</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h3>Quantos canais estão disponíveis?</h3>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Oferecemos mais de 10.000 canais, incluindo canais abertos brasileiros, canais fechados (esportes, filmes, séries, documentários), canais internacionais e uma vasta biblioteca de filmes e séries sob demanda.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h3>Qual a qualidade do streaming?</h3>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Nossos canais estão disponíveis em múltiplas qualidades: SD, HD, Full HD e 4K (dependendo do plano e do canal). A qualidade se adapta automaticamente à sua velocidade de internet para garantir a melhor experiência sem travamentos.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h3>Como faço para assinar?</h3>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>É muito simples! Clique no botão "Assinar Agora" do plano desejado ou entre em contato conosco pelo WhatsApp. Nossa equipe irá guiá-lo através do processo de pagamento e ativação, que leva apenas alguns minutos.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h3>Posso usar em mais de um dispositivo?</h3>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sim! Dependendo do plano escolhido, você pode assistir em 1, 2 ou 3 dispositivos simultaneamente. Você pode instalar o aplicativo em quantos dispositivos quiser, mas o número de telas assistindo ao mesmo tempo depende do seu plano.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h3>Qual a estabilidade do serviço?</h3>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Utilizamos servidores de alta performance distribuídos estrategicamente para garantir máxima estabilidade e velocidade. Nossa taxa de uptime é superior a 99%, e temos equipes técnicas monitorando 24/7 para resolver qualquer problema rapidamente.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="section contato">
+        <div class="container">
+            <h2 class="section-title">Entre em <span class="gradient-text">Contato</span></h2>
+            <p class="section-subtitle">Estamos aqui para ajudar você!</p>
+            
+            <div class="contato-grid">
+                <div class="contato-card">
+                    <div class="contato-icon">💬</div>
+                    <h3>WhatsApp</h3>
+                    <p>Fale conosco agora mesmo</p>
+                    <button class="btn btn-success" onclick="contatarWhatsApp()">
+                        Abrir WhatsApp
+                    </button>
+                </div>
+                
+                <div class="contato-card">
+                    <div class="contato-icon">✈️</div>
+                    <h3>Telegram</h3>
+                    <p>Suporte rápido via Telegram</p>
+                    <button class="btn btn-info" onclick="contatarTelegram()">
+                        Abrir Telegram
+                    </button>
+                </div>
+                
+                <div class="contato-card">
+                    <div class="contato-icon">📧</div>
+                    <h3>E-mail</h3>
+                    <p>contato@chamatv.com.br</p>
+                    <button class="btn btn-outline" onclick="contatarEmail()">
+                        Enviar E-mail
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="logo-chama-tv.png" alt="Chama TV" class="footer-logo-img">
+                </div>
+                <p class="footer-text">O melhor serviço de IPTV Premium do Brasil</p>
+                <p class="footer-copyright">© 2025 Chama TV. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal de Teste -->
+    <div id="testeModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="fecharModal()">&times;</span>
+            <div class="modal-header">
+                <div class="flame-animation">🔥</div>
+                <h2>Criar Teste Grátis</h2>
+                <p>Preencha os dados abaixo para receber seu teste de 2 horas</p>
+            </div>
+            <form id="testeForm" onsubmit="enviarTeste(event)">
+                <div class="form-group">
+                    <label for="nome">Nome Completo</label>
+                    <input type="text" id="nome" name="nome" required placeholder="Digite seu nome">
+                </div>
+                <div class="form-group">
+                    <label for="whatsapp">WhatsApp</label>
+                    <input type="tel" id="whatsapp" name="whatsapp" required placeholder="(00) 00000-0000">
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" required placeholder="seu@email.com">
+                </div>
+                <button type="submit" class="btn btn-primary btn-glow btn-block">
+                    <span class="btn-icon">🔥</span>
+                    Criar Teste Agora
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="carregar-config.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

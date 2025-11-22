@@ -1,0 +1,117 @@
+{
+  "site": {
+    "titulo": "Chama TV",
+    "subtitulo": "O melhor serviço de IPTV Premium do Brasil",
+    "descricao": "Milhares de canais em HD/4K, filmes, séries, esportes ao vivo e muito mais!",
+    "teste_gratis": "TESTE GRÁTIS 2 HORAS"
+  },
+  "cores": {
+    "primaria": "#FF4500",
+    "secundaria": "#FF6B00",
+    "destaque": "#FFD700",
+    "fundo_escuro": "#0a0a0a",
+    "fundo_escuro_2": "#1a1a1a"
+  },
+  "contato": {
+    "whatsapp": "5511999999999",
+    "telegram": "chamatv",
+    "email": "contato@chamatv.com.br"
+  },
+  "planos": {
+    "mensal": {
+      "nome": "Mensal",
+      "preco": "29",
+      "periodo": "/mês",
+      "telas": "1 tela simultânea",
+      "qualidade": "HD/Full HD",
+      "ativo": true
+    },
+    "trimestral": {
+      "nome": "Trimestral",
+      "preco": "69",
+      "periodo": "/3 meses",
+      "telas": "2 telas simultâneas",
+      "qualidade": "HD/Full HD/4K",
+      "destaque": true,
+      "ativo": true
+    },
+    "anual": {
+      "nome": "Anual",
+      "preco": "199",
+      "periodo": "/ano",
+      "telas": "3 telas simultâneas",
+      "qualidade": "HD/Full HD/4K",
+      "ativo": true
+    }
+  },
+  "recursos": [
+    {
+      "icone": "📺",
+      "titulo": "+10.000 Canais",
+      "descricao": "Canais de TV aberta, fechada e internacionais"
+    },
+    {
+      "icone": "🎬",
+      "titulo": "Filmes e Séries",
+      "descricao": "Catálogo completo sempre atualizado"
+    },
+    {
+      "icone": "⚽",
+      "titulo": "Esportes ao Vivo",
+      "descricao": "Todos os campeonatos e eventos esportivos"
+    },
+    {
+      "icone": "📱",
+      "titulo": "Multiplataforma",
+      "descricao": "TV, celular, tablet e computador"
+    },
+    {
+      "icone": "🎯",
+      "titulo": "Qualidade 4K",
+      "descricao": "Imagem perfeita sem travamentos"
+    },
+    {
+      "icone": "🔄",
+      "titulo": "Suporte 24/7",
+      "descricao": "Atendimento rápido e eficiente"
+    }
+  ],
+  "faq": [
+    {
+      "pergunta": "O que é IPTV?",
+      "resposta": "IPTV (Internet Protocol Television) é uma tecnologia que permite assistir TV através da internet, oferecendo milhares de canais, filmes e séries sob demanda."
+    },
+    {
+      "pergunta": "Como funciona o teste grátis?",
+      "resposta": "Você preenche o formulário, entra em contato pelo WhatsApp e recebe acesso imediato por 2 horas para testar todos os recursos do serviço."
+    },
+    {
+      "pergunta": "Quantas telas posso usar?",
+      "resposta": "Depende do plano escolhido: Mensal (1 tela), Trimestral (2 telas) ou Anual (3 telas simultâneas)."
+    },
+    {
+      "pergunta": "Funciona em quais dispositivos?",
+      "resposta": "Funciona em Smart TV, celular, tablet, computador, TV Box e qualquer dispositivo com acesso à internet."
+    },
+    {
+      "pergunta": "A qualidade é boa?",
+      "resposta": "Sim! Oferecemos canais em HD, Full HD e 4K, com servidores de alta performance para evitar travamentos."
+    },
+    {
+      "pergunta": "Como faço para assinar?",
+      "resposta": "Escolha seu plano, clique em 'Assinar Agora' e entre em contato pelo WhatsApp para finalizar a contratação."
+    },
+    {
+      "pergunta": "Posso cancelar quando quiser?",
+      "resposta": "Sim, não há fidelidade. Você pode cancelar a qualquer momento sem multas ou taxas adicionais."
+    },
+    {
+      "pergunta": "Tem suporte técnico?",
+      "resposta": "Sim! Oferecemos suporte 24/7 via WhatsApp e Telegram para resolver qualquer dúvida ou problema."
+    }
+  ],
+  "admin": {
+    "usuario": "admin",
+    "senha": "chama2025"
+  }
+}

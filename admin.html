@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Master | Chama TV</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="admin-style.css">
+    <link rel="stylesheet" href="admin-style-extra.css">
+</head>
+<body>
+    <nav class="admin-navbar">
+        <div class="navbar-content">
+            <div class="navbar-logo">
+                <span class="flame-icon">🔥</span>
+                <span class="logo-text">Chama<span class="highlight">TV</span> Master</span>
+            </div>
+            <div class="navbar-actions">
+                <a href="/" target="_blank" class="btn-view-site">
+                    <span>👁️</span> Ver Site
+                </a>
+                <button class="btn-logout" onclick="logout()">
+                    <span>🚪</span> Sair
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="admin-container">
+        <aside class="sidebar">
+            <div class="sidebar-menu">
+                <button class="menu-item active" data-section="geral">
+                    <span class="menu-icon">⚙️</span>
+                    <span class="menu-text">Geral</span>
+                </button>
+                <button class="menu-item" data-section="cores">
+                    <span class="menu-icon">🎨</span>
+                    <span class="menu-text">Cores</span>
+                </button>
+                <button class="menu-item" data-section="planos">
+                    <span class="menu-icon">💰</span>
+                    <span class="menu-text">Planos</span>
+                </button>
+                <button class="menu-item" data-section="recursos">
+                    <span class="menu-icon">✨</span>
+                    <span class="menu-text">Recursos</span>
+                </button>
+                <button class="menu-item" data-section="faq">
+                    <span class="menu-icon">❓</span>
+                    <span class="menu-text">FAQ</span>
+                </button>
+                <button class="menu-item" data-section="contato">
+                    <span class="menu-icon">📞</span>
+                    <span class="menu-text">Contato</span>
+                </button>
+                <button class="menu-item" data-section="senha">
+                    <span class="menu-icon">🔐</span>
+                    <span class="menu-text">Senha</span>
+                </button>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <div id="alert" class="alert"></div>
+
+            <!-- SEÇÃO GERAL -->
+            <section id="section-geral" class="content-section active">
+                <h2 class="section-title"><span class="title-icon">⚙️</span> Configurações Gerais</h2>
+                <div class="card">
+                    <h3 class="card-title">Informações do Site</h3>
+                    <div class="form-group">
+                        <label for="titulo">Título do Site</label>
+                        <input type="text" id="titulo" placeholder="Chama TV">
+                    </div>
+                    <div class="form-group">
+                        <label for="subtitulo">Subtítulo</label>
+                        <input type="text" id="subtitulo" placeholder="O melhor serviço de IPTV Premium do Brasil">
+                    </div>
+                    <div class="form-group">
+                        <label for="descricao">Descrição</label>
+                        <textarea id="descricao" rows="3" placeholder="Milhares de canais em HD/4K..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="teste_gratis">Texto do Teste Grátis</label>
+                        <input type="text" id="teste_gratis" placeholder="TESTE GRÁTIS 2 HORAS">
+                    </div>
+                </div>
+            </section>
+
+            <!-- SEÇÃO CORES -->
+            <section id="section-cores" class="content-section">
+                <h2 class="section-title"><span class="title-icon">🎨</span> Personalizar Cores</h2>
+                <div class="card">
+                    <h3 class="card-title">Paleta de Cores do Tema</h3>
+                    <p style="color: #999; margin-bottom: 1.5rem;">Personalize as cores do seu site. As mudanças serão aplicadas em todo o tema.</p>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="cor_primaria">Cor Primária</label>
+                            <div class="color-picker-group">
+                                <input type="color" id="cor_primaria" class="color-input" value="#FF4500">
+                                <input type="text" id="cor_primaria_text" class="color-text" value="#FF4500">
+                            </div>
+                            <small>Cor principal do site (botões, destaques)</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="cor_secundaria">Cor Secundária</label>
+                            <div class="color-picker-group">
+                                <input type="color" id="cor_secundaria" class="color-input" value="#FF6B00">
+                                <input type="text" id="cor_secundaria_text" class="color-text" value="#FF6B00">
+                            </div>
+                            <small>Cor secundária (gradientes, efeitos)</small>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="cor_destaque">Cor de Destaque</label>
+                        <div class="color-picker-group">
+                            <input type="color" id="cor_destaque" class="color-input" value="#FFD700">
+                            <input type="text" id="cor_destaque_text" class="color-text" value="#FFD700">
+                        </div>
+                        <small>Cor para elementos especiais (badges, ícones)</small>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SEÇÃO PLANOS -->
+            <section id="section-planos" class="content-section">
+                <h2 class="section-title"><span class="title-icon">💰</span> Planos de Assinatura</h2>
+                
+                <div class="card">
+                    <h3 class="card-title">Plano Mensal</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="mensal_preco">Preço (R$)</label>
+                            <input type="number" id="mensal_preco" placeholder="29">
+                        </div>
+                        <div class="form-group">
+                            <label for="mensal_periodo">Período</label>
+                            <input type="text" id="mensal_periodo" placeholder="/mês">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="mensal_telas">Telas Simultâneas</label>
+                            <input type="text" id="mensal_telas" placeholder="1 tela simultânea">
+                        </div>
+                        <div class="form-group">
+                            <label for="mensal_qualidade">Qualidade</label>
+                            <input type="text" id="mensal_qualidade" placeholder="HD/Full HD">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 class="card-title">Plano Trimestral <span class="badge-destaque">MAIS POPULAR</span></h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="trimestral_preco">Preço (R$)</label>
+                            <input type="number" id="trimestral_preco" placeholder="69">
+                        </div>
+                        <div class="form-group">
+                            <label for="trimestral_periodo">Período</label>
+                            <input type="text" id="trimestral_periodo" placeholder="/3 meses">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="trimestral_telas">Telas Simultâneas</label>
+                            <input type="text" id="trimestral_telas" placeholder="2 telas simultâneas">
+                        </div>
+                        <div class="form-group">
+                            <label for="trimestral_qualidade">Qualidade</label>
+                            <input type="text" id="trimestral_qualidade" placeholder="HD/Full HD/4K">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 class="card-title">Plano Anual</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="anual_preco">Preço (R$)</label>
+                            <input type="number" id="anual_preco" placeholder="199">
+                        </div>
+                        <div class="form-group">
+                            <label for="anual_periodo">Período</label>
+                            <input type="text" id="anual_periodo" placeholder="/ano">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="anual_telas">Telas Simultâneas</label>
+                            <input type="text" id="anual_telas" placeholder="3 telas simultâneas">
+                        </div>
+                        <div class="form-group">
+                            <label for="anual_qualidade">Qualidade</label>
+                            <input type="text" id="anual_qualidade" placeholder="HD/Full HD/4K">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SEÇÃO RECURSOS -->
+            <section id="section-recursos" class="content-section">
+                <h2 class="section-title"><span class="title-icon">✨</span> Recursos e Benefícios</h2>
+                <p style="color: #999; margin-bottom: 1.5rem;">Gerencie os recursos que aparecem na seção "Por que escolher o Chama TV?"</p>
+                
+                <div id="recursos-container"></div>
+                
+                <button class="btn-primary" onclick="adicionarRecurso()">
+                    <span>➕</span> Adicionar Novo Recurso
+                </button>
+            </section>
+
+            <!-- SEÇÃO FAQ -->
+            <section id="section-faq" class="content-section">
+                <h2 class="section-title"><span class="title-icon">❓</span> Perguntas Frequentes (FAQ)</h2>
+                <p style="color: #999; margin-bottom: 1.5rem;">Gerencie as perguntas e respostas que aparecem na seção FAQ do site.</p>
+                
+                <div id="faq-container"></div>
+                
+                <button class="btn-primary" onclick="adicionarFaq()">
+                    <span>➕</span> Adicionar Nova Pergunta
+                </button>
+            </section>
+
+            <!-- SEÇÃO CONTATO -->
+            <section id="section-contato" class="content-section">
+                <h2 class="section-title"><span class="title-icon">📞</span> Informações de Contato</h2>
+                <div class="card">
+                    <h3 class="card-title">Canais de Atendimento</h3>
+                    <div class="form-group">
+                        <label for="whatsapp">WhatsApp</label>
+                        <input type="text" id="whatsapp" placeholder="5511999999999">
+                        <small>Formato: Código do país + DDD + Número (sem espaços ou caracteres especiais)</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="telegram">Telegram</label>
+                        <input type="text" id="telegram" placeholder="chamatv">
+                        <small>Apenas o username (sem @)</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" placeholder="contato@chamatv.com.br">
+                    </div>
+                </div>
+            </section>
+
+            <!-- SEÇÃO SENHA -->
+            <section id="section-senha" class="content-section">
+                <h2 class="section-title"><span class="title-icon">🔐</span> Alterar Senha do Painel</h2>
+                <div class="card">
+                    <h3 class="card-title">Segurança</h3>
+                    <div class="form-group">
+                        <label for="senha_atual">Senha Atual</label>
+                        <input type="password" id="senha_atual" placeholder="Digite sua senha atual">
+                    </div>
+                    <div class="form-group">
+                        <label for="senha_nova">Nova Senha</label>
+                        <input type="password" id="senha_nova" placeholder="Digite a nova senha">
+                    </div>
+                    <div class="form-group">
+                        <label for="senha_confirma">Confirmar Nova Senha</label>
+                        <input type="password" id="senha_confirma" placeholder="Digite a nova senha novamente">
+                    </div>
+                    <button class="btn-primary" onclick="alterarSenha()">
+                        <span>🔐</span> Alterar Senha
+                    </button>
+                </div>
+            </section>
+
+            <div class="save-bar">
+                <button class="btn-save" onclick="salvarConfiguracoes()">
+                    <span>💾</span> Salvar Todas as Alterações
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <script src="admin-script.js"></script>
+</body>
+</html>
