@@ -173,13 +173,8 @@
         </div>
     </div>
 
+    <script src="credenciais.js"></script>
     <script>
-        // Credenciais de acesso
-        const CREDENCIAIS = {
-            usuario: 'admin',
-            senha: 'chamatv2025'
-        };
-
         function fazerLogin(event) {
             event.preventDefault();
             
@@ -187,9 +182,10 @@
             const senha = document.getElementById('senha').value;
             const errorMessage = document.getElementById('errorMessage');
             
-            if (usuario === CREDENCIAIS.usuario && senha === CREDENCIAIS.senha) {
+            if (gerenciadorCredenciais.verificar(usuario, senha)) {
                 // Salvar sessão
                 sessionStorage.setItem('chamatv_admin_logado', 'true');
+                sessionStorage.setItem('chamatv_admin_usuario', usuario);
                 // Redirecionar para o painel
                 window.location.href = 'painel-admin.html';
             } else {

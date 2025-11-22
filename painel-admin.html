@@ -208,8 +208,9 @@
         </div>
         <div class="header-actions">
             <button class="btn btn-success" onclick="salvarTodasConfiguracoes()">💾 Salvar Alterações</button>
+            <a href="painel-solicitacoes.html" class="btn btn-primary" style="text-decoration: none;">📋 Solicitações de Teste</a>
             <button class="btn btn-secondary" onclick="visualizarSite()">👁️ Ver Site</button>
-            <button class="btn btn-secondary" onclick="sair()">🚪 Sair</button>
+            <button class="btn btn-secondary" onclick="sair()">🚺 Sair</button>
         </div>
     </div>
 
@@ -305,9 +306,28 @@
                 </div>
             </div>
         </div>
+
+        <!-- Segurança -->
+        <div class="section">
+            <h2 class="section-title">🔒 Segurança</h2>
+            <div class="form-group">
+                <label>Senha Atual</label>
+                <input type="password" id="senhaAtual" placeholder="Digite sua senha atual">
+            </div>
+            <div class="form-group">
+                <label>Nova Senha</label>
+                <input type="password" id="novaSenha" placeholder="Digite a nova senha (mínimo 6 caracteres)">
+            </div>
+            <div class="form-group">
+                <label>Confirmar Nova Senha</label>
+                <input type="password" id="confirmarSenha" placeholder="Digite a nova senha novamente">
+            </div>
+            <button class="btn btn-primary" onclick="alterarSenha()">🔑 Alterar Senha</button>
+        </div>
     </div>
 
     <script src="config-editavel.js"></script>
+    <script src="credenciais.js"></script>
     <script>
         // Verificar se está logado
         if (sessionStorage.getItem('chamatv_admin_logado') !== 'true') {
@@ -373,7 +393,35 @@
 
         function sair() {
             sessionStorage.removeItem('chamatv_admin_logado');
+            sessionStorage.removeItem('chamatv_admin_usuario');
             window.location.href = 'painel-login.html';
+        }
+
+        function alterarSenha() {
+            const senhaAtual = document.getElementById('senhaAtual').value;
+            const novaSenha = document.getElementById('novaSenha').value;
+            const confirmarSenha = document.getElementById('confirmarSenha').value;
+            
+            if (!senhaAtual || !novaSenha || !confirmarSenha) {
+                alert('⚠️ Por favor, preencha todos os campos!');
+                return;
+            }
+            
+            if (novaSenha !== confirmarSenha) {
+                alert('⚠️ As senhas não coincidem!');
+                return;
+            }
+            
+            const resultado = gerenciadorCredenciais.alterarSenha(senhaAtual, novaSenha);
+            
+            if (resultado.sucesso) {
+                alert('✅ ' + resultado.mensagem);
+                document.getElementById('senhaAtual').value = '';
+                document.getElementById('novaSenha').value = '';
+                document.getElementById('confirmarSenha').value = '';
+            } else {
+                alert('❌ ' + resultado.mensagem);
+            }
         }
 
         // Carregar campos ao iniciar

@@ -71,12 +71,21 @@ testeModal.addEventListener('click', (e) => {
 function enviarTeste(e) {
     e.preventDefault();
     
-    const config = window.CHAMA_TV_CONFIG || {};
-    const whatsappNumero = config.contato?.whatsapp || '5511999999999';
+    const config = carregarConfig();
+    const whatsappNumero = config.whatsapp || '5511999999999';
     
     const nome = document.getElementById('nome').value;
     const whatsapp = document.getElementById('whatsapp').value;
     const email = document.getElementById('email').value;
+    
+    // Salvar solicitação no sistema
+    if (typeof gerenciadorSolicitacoes !== 'undefined') {
+        gerenciadorSolicitacoes.adicionar({
+            nome: nome,
+            whatsapp: whatsapp,
+            email: email
+        });
+    }
     
     // Mensagem para WhatsApp
     const mensagem = `🔥 *SOLICITAÇÃO DE TESTE GRÁTIS - CHAMA TV*\n\n` +
@@ -97,7 +106,7 @@ function enviarTeste(e) {
     document.getElementById('testeForm').reset();
     
     // Mostrar mensagem de sucesso
-    alert('✅ Redirecionando para o WhatsApp! Em breve você receberá seu teste grátis de 2 horas.');
+    alert('✅ Solicitação registrada! Redirecionando para o WhatsApp...');
 }
 
 // Funções de Contato
