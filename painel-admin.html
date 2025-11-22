@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Administrativo | Chama TV</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #1a1a1a;
+            color: #fff;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2d1810 0%, #1a1a1a 100%);
+            border-bottom: 2px solid #ff4500;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .header-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .header-title h1 {
+            font-size: 24px;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 14px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #ff4500 0%, #ff6347 100%);
+            color: #fff;
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            border: 1px solid rgba(255, 69, 0, 0.3);
+        }
+
+        .btn-success {
+            background: #28a745;
+            color: #fff;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 69, 0, 0.3);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px 20px;
+        }
+
+        .section {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 69, 0, 0.2);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #ff4500;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: #ddd;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 69, 0, 0.3);
+            border-radius: 8px;
+            color: #fff;
+            font-size: 14px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #ff4500;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .plano-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 69, 0, 0.2);
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .plano-card h3 {
+            color: #ff4500;
+            margin-bottom: 15px;
+        }
+
+        .success-message {
+            background: rgba(40, 167, 69, 0.2);
+            border: 1px solid #28a745;
+            color: #28a745;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .success-message.show {
+            display: block;
+            animation: fadeIn 0.3s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .info-box {
+            background: rgba(255, 165, 0, 0.1);
+            border: 1px solid rgba(255, 165, 0, 0.3);
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .info-box strong {
+            color: #ffa500;
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .header-actions {
+                width: 100%;
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-title">
+            <span style="font-size: 30px;">🔥</span>
+            <h1>Painel Administrativo - Chama TV</h1>
+        </div>
+        <div class="header-actions">
+            <button class="btn btn-success" onclick="salvarTodasConfiguracoes()">💾 Salvar Alterações</button>
+            <button class="btn btn-secondary" onclick="visualizarSite()">👁️ Ver Site</button>
+            <button class="btn btn-secondary" onclick="sair()">🚪 Sair</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="success-message" id="successMessage">
+            ✅ Configurações salvas com sucesso! As alterações já estão visíveis no site.
+        </div>
+
+        <div class="info-box">
+            <strong>📌 Como usar:</strong> Edite os campos abaixo e clique em "Salvar Alterações". As mudanças aparecerão instantaneamente no site!
+        </div>
+
+        <!-- Informações Gerais -->
+        <div class="section">
+            <h2 class="section-title">📝 Informações Gerais</h2>
+            <div class="grid-2">
+                <div class="form-group">
+                    <label>Nome do Site</label>
+                    <input type="text" id="siteName" placeholder="Chama TV">
+                </div>
+                <div class="form-group">
+                    <label>Título da Página</label>
+                    <input type="text" id="siteTitle" placeholder="Chama TV - IPTV Premium">
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Título Principal (Hero)</label>
+                <input type="text" id="heroTitle" placeholder="Bem-vindo ao Chama TV">
+            </div>
+            <div class="form-group">
+                <label>Subtítulo</label>
+                <input type="text" id="heroSubtitle" placeholder="O melhor serviço de IPTV Premium do Brasil">
+            </div>
+            <div class="form-group">
+                <label>Descrição</label>
+                <textarea id="heroDescription" placeholder="Milhares de canais em HD/4K..."></textarea>
+            </div>
+            <div class="form-group">
+                <label>Texto do Badge de Teste</label>
+                <input type="text" id="testeBadge" placeholder="TESTE GRÁTIS 2 HORAS">
+            </div>
+        </div>
+
+        <!-- Contatos -->
+        <div class="section">
+            <h2 class="section-title">📞 Informações de Contato</h2>
+            <div class="grid-2">
+                <div class="form-group">
+                    <label>WhatsApp (com código do país)</label>
+                    <input type="text" id="whatsapp" placeholder="5511999999999">
+                    <small style="color: #888; font-size: 12px;">Exemplo: 5511999999999 (55 + DDD + número)</small>
+                </div>
+                <div class="form-group">
+                    <label>Telegram (usuário)</label>
+                    <input type="text" id="telegram" placeholder="chamatv">
+                </div>
+            </div>
+            <div class="form-group">
+                <label>E-mail</label>
+                <input type="email" id="email" placeholder="contato@chamatv.com.br">
+            </div>
+        </div>
+
+        <!-- Planos -->
+        <div class="section">
+            <h2 class="section-title">💰 Planos e Preços</h2>
+            <div class="grid-2">
+                <!-- Plano Mensal -->
+                <div class="plano-card">
+                    <h3>Plano Mensal</h3>
+                    <div class="form-group">
+                        <label>Preço (apenas número)</label>
+                        <input type="number" id="planoMensalPreco" placeholder="29">
+                    </div>
+                </div>
+
+                <!-- Plano Trimestral -->
+                <div class="plano-card">
+                    <h3>Plano Trimestral</h3>
+                    <div class="form-group">
+                        <label>Preço (apenas número)</label>
+                        <input type="number" id="planoTrimestralPreco" placeholder="69">
+                    </div>
+                </div>
+
+                <!-- Plano Anual -->
+                <div class="plano-card">
+                    <h3>Plano Anual</h3>
+                    <div class="form-group">
+                        <label>Preço (apenas número)</label>
+                        <input type="number" id="planoAnualPreco" placeholder="199">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="config-editavel.js"></script>
+    <script>
+        // Verificar se está logado
+        if (sessionStorage.getItem('chamatv_admin_logado') !== 'true') {
+            window.location.href = 'painel-login.html';
+        }
+
+        // Carregar configurações nos campos
+        function carregarCampos() {
+            const config = carregarConfig();
+            
+            document.getElementById('siteName').value = config.siteName || '';
+            document.getElementById('siteTitle').value = config.siteTitle || '';
+            document.getElementById('heroTitle').value = config.heroTitle || '';
+            document.getElementById('heroSubtitle').value = config.heroSubtitle || '';
+            document.getElementById('heroDescription').value = config.heroDescription || '';
+            document.getElementById('testeBadge').value = config.testeBadge || '';
+            
+            document.getElementById('whatsapp').value = config.whatsapp || '';
+            document.getElementById('telegram').value = config.telegram || '';
+            document.getElementById('email').value = config.email || '';
+            
+            document.getElementById('planoMensalPreco').value = config.planoMensal.preco || '';
+            document.getElementById('planoTrimestralPreco').value = config.planoTrimestral.preco || '';
+            document.getElementById('planoAnualPreco').value = config.planoAnual.preco || '';
+        }
+
+        // Salvar todas as configurações
+        function salvarTodasConfiguracoes() {
+            const config = carregarConfig();
+            
+            // Informações gerais
+            config.siteName = document.getElementById('siteName').value;
+            config.siteTitle = document.getElementById('siteTitle').value;
+            config.heroTitle = document.getElementById('heroTitle').value;
+            config.heroSubtitle = document.getElementById('heroSubtitle').value;
+            config.heroDescription = document.getElementById('heroDescription').value;
+            config.testeBadge = document.getElementById('testeBadge').value;
+            
+            // Contatos
+            config.whatsapp = document.getElementById('whatsapp').value;
+            config.telegram = document.getElementById('telegram').value;
+            config.email = document.getElementById('email').value;
+            
+            // Planos
+            config.planoMensal.preco = document.getElementById('planoMensalPreco').value;
+            config.planoTrimestral.preco = document.getElementById('planoTrimestralPreco').value;
+            config.planoAnual.preco = document.getElementById('planoAnualPreco').value;
+            
+            // Salvar
+            salvarConfig(config);
+            
+            // Mostrar mensagem de sucesso
+            const successMessage = document.getElementById('successMessage');
+            successMessage.classList.add('show');
+            setTimeout(() => {
+                successMessage.classList.remove('show');
+            }, 3000);
+        }
+
+        function visualizarSite() {
+            window.open('index.html', '_blank');
+        }
+
+        function sair() {
+            sessionStorage.removeItem('chamatv_admin_logado');
+            window.location.href = 'painel-login.html';
+        }
+
+        // Carregar campos ao iniciar
+        carregarCampos();
+    </script>
+</body>
+</html>
